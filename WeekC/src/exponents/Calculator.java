@@ -12,7 +12,6 @@ public class Calculator {
 		if(number == 1) {
 			return 1;
 		} else {
-			//System.out.println(number);
 			return factorial(number-1) * number;
 		}
 	}

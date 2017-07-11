@@ -8,5 +8,4 @@ public class Factorial {
 		Calculator calc = new Calculator();
 		System.out.println(calc.factorial(number));
 	}
-
 }
