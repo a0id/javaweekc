@@ -1,6 +1,6 @@
 package exponents;
 import java.util.Scanner;
-public class Main {
+public class Exponent {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter base: ");
@@ -8,6 +8,6 @@ public class Main {
 		System.out.println("Enter exponent: ");
 		int exponent = scan.nextInt();
 		Calculator calc = new Calculator();
-		System.out.println(calc.solve(base, exponent));
+		System.out.println(calc.exponent(base, exponent));
 	}
 }

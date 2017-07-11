@@ -1,11 +1,19 @@
 package exponents;
 
 public class Calculator {
-	public int solve(int base, int exponent) {
+	public int exponent(int base, int exponent) {
 		if(exponent == 0) {
 			return 1;
 		} else {
-			return base*solve(base, exponent-1);
+			return base*exponent(base, exponent-1);
+		}
+	}
+	public int factorial(int number) {
+		if(number == 1) {
+			return 1;
+		} else {
+			//System.out.println(number);
+			return factorial(number-1) * number;
 		}
 	}
 }
