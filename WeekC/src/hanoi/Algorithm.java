@@ -17,3 +17,4 @@ public class Algorithm {
 		}
 	}
 }
+//ALGORITHM SMALLEST PIECE TWO PEGS TO THE RIGHT EVERY OTHER TURN
