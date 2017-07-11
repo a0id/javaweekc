@@ -1,4 +1,4 @@
-package recursion;
+package fibbonacci;
 
 public class Main {
 

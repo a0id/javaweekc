@@ -8,6 +8,7 @@ public class ComplexHanoi {
 	   System.out.print("Amount: ");
        int amount = scanner.nextInt();
 	   Algorithm hanoi = new Algorithm();
+	   System.out.println("Minimum Moves: " + hanoi.moves(amount));
        hanoi.answer(amount, "A", "B", "C");
 	}
 

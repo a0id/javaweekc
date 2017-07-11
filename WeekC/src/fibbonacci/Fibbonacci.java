@@ -1,4 +1,4 @@
-package recursion;
+package fibbonacci;
 //F{n} = F{n-1} + F{n-2}
 public class Fibbonacci {
 	/*public int Fibbonacci2(int curr, int last) {
