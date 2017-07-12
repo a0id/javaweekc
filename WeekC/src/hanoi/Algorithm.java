@@ -17,4 +17,4 @@ public class Algorithm {
 		}
 	}
 }
-//ALGORITHM SMALLEST PIECE TWO PEGS TO THE RIGHT EVERY OTHER TURN
+//Algorithm: Smallest block goes two pegs to the right every other turn.
