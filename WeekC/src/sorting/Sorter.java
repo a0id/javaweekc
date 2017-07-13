@@ -38,57 +38,48 @@ public class Sorter {
         a.set(i, a.get(change));
         a.set(change, helper);
     }
-    
-	public ArrayList<Integer> oldinsertionSort(ArrayList<Integer> arr) {
-		//while(!isSorted(arr)) {
-			System.out.println("working in while");
-			for(int x=0;x<arr.size()-1;x++) {
-				for(int y:arr) {
-					System.out.print(y);
-				}
-				System.out.println();
-				System.out.println("working in big for");
-				//System.out.println("x value is: " + x);
-				if(arr.get(x+1) > arr.get(x)) {
-					
-					int save = arr.get(x+1);
-					arr.remove(x+1);
-					System.out.println("does this iffffff work");
-					for(int i=x; i >= 0; i--) {
-						System.out.println("working in nesttttttttttttttttttttttttttttt");
-						if(arr.get(x) < arr.get(x-1)) {
-							arr.add(x-1, save);
-						}
-					}
-					/*System.out.println("x is:  " + x);
-					int temp = arr.get(x+1);
-					arr.set(x+1, x);
-					arr.set(x, temp);
-					System.out.println(arr.get(x));*/
-				}
-			}
-		//}
-		System.out.println("returned");
-		return arr;
-	}
 	public ArrayList<Integer> insertionSort(ArrayList<Integer> arr) {
 		for(int x=0;x<arr.size()-1;x++) {
 			if(arr.get(x) > arr.get(x+1)) {
 				int save = arr.get(x+1);
 				for(int i = x + 1; i > 0; i--) {
-
 					if(arr.get(i) < arr.get(i-1)) {
-						for(int yo:arr) {System.out.print(yo);}System.out.println();
 						arr.remove(arr.get(i));
 						arr.add(i-1, save);
-						
 					}
 				}
-			
 			}
-			
 		}
 		return arr;
+	}
+	public ArrayList<Integer> quickSort(ArrayList<Integer> arr) {
+		if(isSorted(arr)) {
+			return arr;
+		} else {
+			int pivot = arr.get(arr.size()-1);
+			for(int x=0;x<arr.lastIndexOf(pivot);x++) {
+				if(arr.get(x) > pivot) {
+					int saved = arr.get(x);
+					arr.remove(x);
+					arr.add(saved);
+					x--;
+				}
+			}
+			int pivPoint = arr.lastIndexOf(pivot);
+			ArrayList<Integer> before = new ArrayList<Integer>();
+			ArrayList<Integer> after = new ArrayList<Integer>();
+			for(int i = 0; i < pivPoint; i++) {
+				before.add(arr.get(i));
+			}
+			for(int i = pivPoint+1; i < arr.size(); i++) {
+				after.add(arr.get(i));
+			}
+			ArrayList<Integer> sorted = new ArrayList<Integer>();
+			sorted.addAll(quickSort(before));
+			sorted.add(pivot);
+			sorted.addAll(quickSort(after));
+			return sorted;
+		}
 	}
 	public boolean isSorted(ArrayList<Integer> arr) {
 		for(int x = 0; x < arr.size()-1; x++) {
