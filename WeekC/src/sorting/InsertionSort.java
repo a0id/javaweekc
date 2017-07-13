@@ -7,15 +7,12 @@ public class InsertionSort {
 	public static void main(String[] args) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		Sorter insert = new Sorter();
-		int[] array = {4, 1, 7, 2, 6, 9, 3, 8, 0, 5};
-		for(int i=0;i<array.length;i++) {
-			arr.add(array[i]);
+		for(int i=0;i<10;i++) {
+			arr.add(i);
 		}
-		ArrayList<Integer> arry = insert.insertionSort(arr);
-		for(int y:arry) {
-			System.out.println(y);
-		}
-
+		Sorter shuffle = new Sorter();
+		System.out.println(shuffle.shuffleList(arr));
+		ArrayList<Integer> sorted = insert.insertionSort(arr);	
+		System.out.println(sorted);
 	}
-
 }

@@ -18,8 +18,6 @@ public class Sorter {
 	public ArrayList<Integer> bogosort(ArrayList<Integer> arr) {
 		while(!isSorted(arr)) {
 			arr = shuffleList(arr);
-			for(int types:arr) {System.out.print(types);}
-			System.out.println();
 		}
 		return arr;
 	}
@@ -74,16 +72,19 @@ public class Sorter {
 		return arr;
 	}
 	public ArrayList<Integer> insertionSort(ArrayList<Integer> arr) {
-		for(int x=1;x<arr.size()-1;x++) {
+		for(int x=0;x<arr.size()-1;x++) {
 			if(arr.get(x) > arr.get(x+1)) {
 				int save = arr.get(x+1);
 				for(int i = x + 1; i > 0; i--) {
-					if(arr.get(i) < x && arr.get(i) > i-1) {
+
+					if(arr.get(i) < arr.get(i-1)) {
 						for(int yo:arr) {System.out.print(yo);}System.out.println();
-						arr.remove(x);
-						arr.add(x, save);
+						arr.remove(arr.get(i));
+						arr.add(i-1, save);
+						
 					}
 				}
+			
 			}
 			
 		}
