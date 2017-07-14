@@ -7,7 +7,7 @@ public class InsertionSort {
 	public static void main(String[] args) {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		Sorter insert = new Sorter();
-		for(int i=0;i<10;i++) {
+		for(int i=0;i<10000;i++) {
 			arr.add(i);
 		}
 		Sorter shuffle = new Sorter();
